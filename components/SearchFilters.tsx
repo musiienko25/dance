@@ -59,7 +59,7 @@ export default function SearchFilters({ filters, onFiltersChange }: SearchFilter
             id="dance_style"
             value={filters.dance_style || ''}
             onChange={(e) => handleChange('dance_style', e.target.value || undefined)}
-            className="mt-1 block w-full rounded-xl border border-white/30 bg-white/20 backdrop-blur-sm px-3 py-2 text-sm text-white placeholder-white/80 focus:border-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+            className="mt-1 block w-full rounded-xl border border-white/30 bg-white/20 backdrop-blur-sm pl-3 py-2 text-sm text-white placeholder-white/80 focus:border-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
           >
             <option value="" className="bg-gray-800 text-white">Всі стилі</option>
             {danceStyles.map((style) => (
@@ -92,7 +92,7 @@ export default function SearchFilters({ filters, onFiltersChange }: SearchFilter
             id="skill_level"
             value={filters.skill_level || ''}
             onChange={(e) => handleChange('skill_level', e.target.value || undefined)}
-            className="mt-1 block w-full rounded-xl border border-white/30 bg-white/20 backdrop-blur-sm px-3 py-2 text-sm text-white placeholder-white/80 focus:border-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+            className="mt-1 block w-full rounded-xl border border-white/30 bg-white/20 backdrop-blur-sm pl-3 py-2 text-sm text-white placeholder-white/80 focus:border-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
           >
             <option value="" className="bg-gray-800 text-white">Всі рівні</option>
             {skillLevels.map((level) => (
@@ -111,7 +111,7 @@ export default function SearchFilters({ filters, onFiltersChange }: SearchFilter
             id="age_category"
             value={filters.age_category || ''}
             onChange={(e) => handleChange('age_category', e.target.value || undefined)}
-            className="mt-1 block w-full rounded-xl border border-white/30 bg-white/20 backdrop-blur-sm px-3 py-2 text-sm text-white placeholder-white/80 focus:border-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+            className="mt-1 block w-full rounded-xl border border-white/30 bg-white/20 backdrop-blur-sm pl-3 py-2 text-sm text-white placeholder-white/80 focus:border-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
           >
             <option value="" className="bg-gray-800 text-white">Всі вікові категорії</option>
             {ageCategories.map((category) => (
