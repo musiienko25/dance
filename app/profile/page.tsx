@@ -24,7 +24,7 @@ export default async function ProfilePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen py-12">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
         <div className="mb-4">
           <Link
@@ -34,7 +34,7 @@ export default async function ProfilePage() {
             ← Назад до пошуку
           </Link>
         </div>
-        <div className="rounded-lg bg-white p-8 shadow-sm">
+        <div className="rounded-lg bg-white/95 backdrop-blur-sm p-8 shadow-sm">
           <h1 className="mb-6 text-2xl font-bold text-gray-900">Мій профіль</h1>
           <ProfileForm initialData={profile} />
         </div>

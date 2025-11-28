@@ -32,7 +32,7 @@ export default function ProfileCard({ profile }: ProfileCardProps) {
   }
 
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+    <div className="rounded-lg border border-gray-200 bg-white/95 backdrop-blur-sm p-6 shadow-sm transition-shadow hover:shadow-md">
       <div className="flex items-start justify-between">
         <div className="flex-1">
           <h3 className="text-xl font-semibold text-gray-900">

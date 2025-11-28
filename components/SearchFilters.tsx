@@ -39,7 +39,7 @@ export default function SearchFilters({ filters, onFiltersChange }: SearchFilter
   }
 
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+    <div className="rounded-lg border border-gray-200 bg-white/95 backdrop-blur-sm p-6 shadow-sm">
       <div className="mb-4 flex items-center justify-between">
         <h2 className="text-lg font-semibold text-gray-900">Фільтри пошуку</h2>
         <button

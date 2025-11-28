@@ -24,9 +24,9 @@ export default async function CreateProfilePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen py-12">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-lg bg-white p-8 shadow-sm">
+        <div className="rounded-lg bg-white/95 backdrop-blur-sm p-8 shadow-sm">
           <h1 className="mb-6 text-2xl font-bold text-gray-900">Створення профілю</h1>
           <ProfileForm />
         </div>

@@ -56,8 +56,8 @@ export default function SearchPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <nav className="bg-white shadow-sm">
+    <div className="min-h-screen">
+      <nav className="bg-white/90 backdrop-blur-sm shadow-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <h1 className="text-xl font-bold text-gray-900">Dance Partners</h1>
@@ -86,7 +86,7 @@ export default function SearchPage() {
                 <p className="text-gray-600">Завантаження...</p>
               </div>
             ) : profiles.length === 0 ? (
-              <div className="rounded-lg border border-gray-200 bg-white p-12 text-center">
+              <div className="rounded-lg border border-gray-200 bg-white/95 backdrop-blur-sm p-12 text-center">
                 <p className="text-gray-600">Профілів не знайдено</p>
                 <p className="mt-2 text-sm text-gray-500">
                   Спробуйте змінити фільтри пошуку
