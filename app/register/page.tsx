@@ -34,25 +34,25 @@ export default function RegisterPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
-      <div className="w-full max-w-md space-y-8 rounded-lg bg-white/95 backdrop-blur-sm p-8 shadow-lg">
+      <div className="w-full max-w-md space-y-8 rounded-3xl bg-white/20 backdrop-blur-xl p-8 shadow-2xl border border-white/30">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+          <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-white drop-shadow-lg">
             Реєстрація
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
+          <p className="mt-2 text-center text-sm text-white/90">
             Або{' '}
-            <Link href="/login" className="font-medium text-blue-600 hover:text-blue-500">
+            <Link href="/login" className="font-medium text-white hover:text-white/80 underline">
               увійдіть
             </Link>
           </p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleRegister}>
           {error && (
-            <div className="rounded-md bg-red-50 p-4">
-              <p className="text-sm text-red-800">{error}</p>
+            <div className="rounded-xl bg-red-500/30 backdrop-blur-sm border border-red-400/50 p-4">
+              <p className="text-sm text-white font-medium">{error}</p>
             </div>
           )}
-          <div className="space-y-4 rounded-md shadow-sm">
+          <div className="space-y-4">
             <div>
               <label htmlFor="email" className="sr-only">
                 Email
@@ -63,7 +63,7 @@ export default function RegisterPage() {
                 type="email"
                 autoComplete="email"
                 required
-                className="relative block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
+                className="relative block w-full rounded-xl border border-white/30 bg-white/20 backdrop-blur-sm px-4 py-3 text-white placeholder-white/70 focus:z-10 focus:border-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 sm:text-sm"
                 placeholder="Email адреса"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -79,7 +79,7 @@ export default function RegisterPage() {
                 type="password"
                 autoComplete="new-password"
                 required
-                className="relative block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
+                className="relative block w-full rounded-xl border border-white/30 bg-white/20 backdrop-blur-sm px-4 py-3 text-white placeholder-white/70 focus:z-10 focus:border-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 sm:text-sm"
                 placeholder="Пароль (мінімум 6 символів)"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -92,7 +92,7 @@ export default function RegisterPage() {
             <button
               type="submit"
               disabled={loading}
-              className="group relative flex w-full justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
+              className="group relative flex w-full justify-center rounded-xl border border-white/30 bg-white/30 backdrop-blur-sm px-4 py-3 text-sm font-semibold text-white hover:bg-white/40 focus:outline-none focus:ring-2 focus:ring-white/30 focus:ring-offset-2 focus:ring-offset-transparent disabled:opacity-50 transition-all duration-200 shadow-lg"
             >
               {loading ? 'Реєстрація...' : 'Зареєструватися'}
             </button>
