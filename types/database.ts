@@ -1,4 +1,4 @@
-export type DanceStyle = 'ballroom' | 'latin' | 'standard'
+export type DanceStyle = 'latin' | 'standard'
 export type SkillLevel = 'beginner' | 'intermediate' | 'advanced' | 'pro'
 export type Goal = 'competition' | 'training' | 'hobby'
 export type AgeCategory = '18-25' | '26-35' | '36-45' | '46+'

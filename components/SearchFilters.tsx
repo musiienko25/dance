@@ -8,7 +8,6 @@ interface SearchFiltersProps {
 }
 
 const danceStyles: { value: DanceStyle; label: string }[] = [
-  { value: 'ballroom', label: 'Бальні' },
   { value: 'latin', label: 'Латина' },
   { value: 'standard', label: 'Стандарт' },
 ]
@@ -60,7 +59,7 @@ export default function SearchFilters({ filters, onFiltersChange }: SearchFilter
             id="dance_style"
             value={filters.dance_style || ''}
             onChange={(e) => handleChange('dance_style', e.target.value || undefined)}
-            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
           >
             <option value="">Всі стилі</option>
             {danceStyles.map((style) => (
@@ -81,7 +80,7 @@ export default function SearchFilters({ filters, onFiltersChange }: SearchFilter
             value={filters.city || ''}
             onChange={(e) => handleChange('city', e.target.value || undefined)}
             placeholder="Введіть місто"
-            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
           />
         </div>
 
@@ -93,7 +92,7 @@ export default function SearchFilters({ filters, onFiltersChange }: SearchFilter
             id="skill_level"
             value={filters.skill_level || ''}
             onChange={(e) => handleChange('skill_level', e.target.value || undefined)}
-            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
           >
             <option value="">Всі рівні</option>
             {skillLevels.map((level) => (
@@ -112,7 +111,7 @@ export default function SearchFilters({ filters, onFiltersChange }: SearchFilter
             id="age_category"
             value={filters.age_category || ''}
             onChange={(e) => handleChange('age_category', e.target.value || undefined)}
-            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+            className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
           >
             <option value="">Всі вікові категорії</option>
             {ageCategories.map((category) => (

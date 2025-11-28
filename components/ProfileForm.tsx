@@ -10,7 +10,6 @@ interface ProfileFormProps {
 }
 
 const danceStyles: { value: DanceStyle; label: string }[] = [
-  { value: 'ballroom', label: 'Бальні' },
   { value: 'latin', label: 'Латина' },
   { value: 'standard', label: 'Стандарт' },
 ]
@@ -122,7 +121,7 @@ export default function ProfileForm({ initialData }: ProfileFormProps) {
           required
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+          className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
         />
       </div>
 
@@ -135,7 +134,7 @@ export default function ProfileForm({ initialData }: ProfileFormProps) {
           id="nickname"
           value={formData.nickname || ''}
           onChange={(e) => setFormData({ ...formData, nickname: e.target.value })}
-          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+          className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
         />
       </div>
 
@@ -151,7 +150,7 @@ export default function ProfileForm({ initialData }: ProfileFormProps) {
           max="100"
           value={formData.age}
           onChange={(e) => setFormData({ ...formData, age: parseInt(e.target.value) })}
-          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+          className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
         />
       </div>
 
@@ -165,7 +164,7 @@ export default function ProfileForm({ initialData }: ProfileFormProps) {
           required
           value={formData.city}
           onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+          className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
         />
       </div>
 
@@ -205,7 +204,7 @@ export default function ProfileForm({ initialData }: ProfileFormProps) {
           onChange={(e) =>
             setFormData({ ...formData, skill_level: e.target.value as SkillLevel })
           }
-          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+          className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
         >
           {skillLevels.map((level) => (
             <option key={level.value} value={level.value}>
@@ -249,7 +248,7 @@ export default function ProfileForm({ initialData }: ProfileFormProps) {
           rows={4}
           value={formData.description || ''}
           onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+          className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
         />
       </div>
 
@@ -262,7 +261,7 @@ export default function ProfileForm({ initialData }: ProfileFormProps) {
           id="email"
           value={formData.email || ''}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+          className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
         />
       </div>
 
@@ -276,7 +275,7 @@ export default function ProfileForm({ initialData }: ProfileFormProps) {
           value={formData.social_media || ''}
           onChange={(e) => setFormData({ ...formData, social_media: e.target.value })}
           placeholder="https://..."
-          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+          className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-blue-500"
         />
       </div>
 

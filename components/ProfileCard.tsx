@@ -13,7 +13,6 @@ const skillLevelLabels: Record<string, string> = {
 }
 
 const danceStyleLabels: Record<string, string> = {
-  ballroom: 'Бальні',
   latin: 'Латина',
   standard: 'Стандарт',
 }
