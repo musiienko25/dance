@@ -50,23 +50,29 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
 3. Вам потрібно створити OAuth credentials в Google Cloud Console:
    - Перейдіть на [Google Cloud Console](https://console.cloud.google.com/)
    - Створіть новий проект або виберіть існуючий
+   - Увімкніть **Google+ API** (якщо потрібно)
    - Перейдіть в **APIs & Services** → **Credentials**
    - Натисніть **Create Credentials** → **OAuth client ID**
    - Виберіть **Web application**
-   - Додайте **Authorized redirect URIs**: 
+   - **ВАЖЛИВО**: Додайте **Authorized redirect URIs**: 
      ```
      https://your-project-ref.supabase.co/auth/v1/callback
      ```
-     (замініть `your-project-ref` на ваш Supabase project reference)
+     (замініть `your-project-ref` на ваш Supabase project reference - знайдіть його в URL вашого Supabase проекту)
+     - Наприклад, якщо ваш Supabase URL: `https://abcdefghijklmnop.supabase.co`, то `abcdefghijklmnop` - це ваш project reference
    - Скопіюйте **Client ID** та **Client Secret**
 4. Поверніться в Supabase Dashboard:
-   - Вставте **Client ID** та **Client Secret** в поля Google provider
+   - Перейдіть в **Authentication** → **Providers** → **Google**
+   - Вставте **Client ID** та **Client Secret** в відповідні поля
    - Збережіть налаштування
-5. Додайте ваш домен в **Authentication** → **URL Configuration** → **Redirect URLs**:
-   ```
-   http://localhost:3000/auth/callback
-   https://yourdomain.com/auth/callback
-   ```
+5. **ВАЖЛИВО**: Додайте ваші callback URLs в Supabase:
+   - Перейдіть в **Authentication** → **URL Configuration**
+   - В розділі **Redirect URLs** додайте:
+     ```
+     http://localhost:3000/auth/callback
+     https://yourdomain.com/auth/callback
+     ```
+   - Збережіть зміни
 
 ## Крок 5: Запуск проекту
 
@@ -95,4 +101,16 @@ npm run dev
 ### Помилка RLS (Row Level Security)
 - Переконайтеся, що політики створені правильно в міграції
 - Перевірте, що користувач авторизований
+
+### Помилка "redirect_uri_mismatch" при вході через Google
+- **ВАЖЛИВО**: В Google Cloud Console потрібно додати Supabase redirect URI, а НЕ ваш локальний URL
+- В Google Cloud Console → OAuth client → Authorized redirect URIs додайте:
+  ```
+  https://your-project-ref.supabase.co/auth/v1/callback
+  ```
+- В Supabase Dashboard → Authentication → URL Configuration → Redirect URLs додайте:
+  ```
+  http://localhost:3000/auth/callback
+  ```
+- Переконайтеся, що ви використовуєте правильний project reference (знайдіть його в URL вашого Supabase проекту)
 

@@ -8,9 +8,9 @@ export default function SignOutButton() {
   const supabase = createClient()
 
   const handleSignOut = async () => {
-    await supabase.auth.signOut()
-    router.push('/login')
-    router.refresh()
+    await supabase.auth.signOut({ scope: 'global' })
+    // Очистити всі cookies та localStorage
+    window.location.href = '/login'
   }
 
   return (
