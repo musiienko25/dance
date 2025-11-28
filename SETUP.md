@@ -37,9 +37,36 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
 
 ## Крок 4: Налаштування аутентифікації
 
+### Email аутентифікація
+
 1. В Supabase Dashboard перейдіть в **Authentication** → **Providers**
 2. Переконайтеся, що **Email** provider увімкнено
 3. (Опціонально) Налаштуйте email templates в **Authentication** → **Email Templates**
+
+### Google OAuth (опціонально)
+
+1. В Supabase Dashboard перейдіть в **Authentication** → **Providers**
+2. Знайдіть **Google** в списку провайдерів та натисніть **Enable**
+3. Вам потрібно створити OAuth credentials в Google Cloud Console:
+   - Перейдіть на [Google Cloud Console](https://console.cloud.google.com/)
+   - Створіть новий проект або виберіть існуючий
+   - Перейдіть в **APIs & Services** → **Credentials**
+   - Натисніть **Create Credentials** → **OAuth client ID**
+   - Виберіть **Web application**
+   - Додайте **Authorized redirect URIs**: 
+     ```
+     https://your-project-ref.supabase.co/auth/v1/callback
+     ```
+     (замініть `your-project-ref` на ваш Supabase project reference)
+   - Скопіюйте **Client ID** та **Client Secret**
+4. Поверніться в Supabase Dashboard:
+   - Вставте **Client ID** та **Client Secret** в поля Google provider
+   - Збережіть налаштування
+5. Додайте ваш домен в **Authentication** → **URL Configuration** → **Redirect URLs**:
+   ```
+   http://localhost:3000/auth/callback
+   https://yourdomain.com/auth/callback
+   ```
 
 ## Крок 5: Запуск проекту
 
