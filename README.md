@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dance Partners - Застосунок для пошуку партнерів для танцюристів
 
-## Getting Started
+Застосунок для пошуку партнерів для бальних танцюристів, створений на Next.js з використанням Supabase для аутентифікації та бази даних.
 
-First, run the development server:
+## Функціонал MVP
 
+- ✅ Реєстрація та авторизація через Supabase
+- ✅ Створення та редагування профілю танцюриста
+- ✅ Пошук партнерів з фільтрами:
+  - Стиль танцю (Бальні, Латина, Стандарт)
+  - Місто
+  - Рівень (Початківець, Середній, Просунутий, Професіонал)
+  - Вікова категорія (18-25, 26-35, 36-45, 46+)
+- ✅ Перегляд профілів з можливістю зв'язку через email або соцмережі
+
+## Технології
+
+- **Next.js 16** - React фреймворк з App Router
+- **TypeScript** - типізація
+- **Tailwind CSS** - стилізація
+- **Supabase** - аутентифікація та база даних
+
+## Встановлення
+
+1. Клонуйте репозиторій або використовуйте існуючий проект
+
+2. Встановіть залежності:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Створіть проект в Supabase:
+   - Перейдіть на [supabase.com](https://supabase.com)
+   - Створіть новий проект
+   - Скопіюйте URL та Anon Key
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. Налаштуйте змінні оточення:
+```bash
+cp .env.local.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Заповніть `.env.local`:
+```
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
-## Learn More
+5. Створіть таблицю в Supabase:
+   - Перейдіть в SQL Editor в вашому Supabase проекті
+   - Виконайте SQL з файлу `supabase/migrations/001_initial_schema.sql`
 
-To learn more about Next.js, take a look at the following resources:
+6. Запустіть проект:
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Відкрийте [http://localhost:3000](http://localhost:3000) у браузері.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Структура проекту
 
-## Deploy on Vercel
+```
+dance/
+├── app/                    # Next.js App Router
+│   ├── login/             # Сторінка входу
+│   ├── register/          # Сторінка реєстрації
+│   ├── profile/           # Профіль користувача
+│   └── auth/              # API routes для аутентифікації
+├── components/            # React компоненти
+│   ├── ProfileCard.tsx    # Карточка профілю
+│   ├── ProfileForm.tsx    # Форма профілю
+│   ├── SearchFilters.tsx  # Фільтри пошуку
+│   └── SearchPage.tsx     # Сторінка пошуку
+├── lib/                   # Утиліти
+│   └── supabase/          # Supabase клієнти
+├── types/                 # TypeScript типи
+│   └── database.ts        # Типи для бази даних
+└── supabase/              # Міграції бази даних
+    └── migrations/
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Використання
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Реєстрація**: Створіть акаунт на сторінці `/register`
+2. **Створення профілю**: Після реєстрації вас перенаправить на створення профілю
+3. **Пошук**: На головній сторінці використовуйте фільтри для пошуку партнерів
+4. **Редагування профілю**: Перейдіть в "Мій профіль" для редагування
+
+## Особливості
+
+- **Row Level Security (RLS)**: Всі профілі видимі всім, але редагувати можна тільки свій
+- **Автоматичне оновлення**: Поле `updated_at` оновлюється автоматично
+- **SEO оптимізація**: Next.js App Router забезпечує хорошу SEO оптимізацію
+
+## Розробка
+
+Для розробки використовуйте:
+
+```bash
+npm run dev      # Запуск dev сервера
+npm run build    # Збірка для production
+npm run start    # Запуск production сервера
+npm run lint     # Перевірка коду
+```
+
+## Наступні кроки (можливі покращення)
+
+- [ ] Додати завантаження фото профілю
+- [ ] Додати систему повідомлень
+- [ ] Додати фільтр за статтю
+- [ ] Додати можливість "лайкнути" профіль
+- [ ] Додати рекомендації на основі профілю
+- [ ] Додати верифікацію профілів
