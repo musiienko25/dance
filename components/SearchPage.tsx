@@ -57,14 +57,14 @@ export default function SearchPage() {
 
   return (
     <div className="min-h-screen">
-      <nav className="bg-white/90 backdrop-blur-sm shadow-sm">
+      <nav className="bg-white/20 backdrop-blur-xl border-b border-white/30 shadow-lg">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
-            <h1 className="text-xl font-bold text-gray-900">Dance Partners</h1>
+            <h1 className="text-xl font-bold text-white drop-shadow-lg">Dance Partners</h1>
             <div className="flex gap-4">
               <Link
                 href="/profile"
-                className="text-sm text-gray-700 hover:text-gray-900"
+                className="text-sm text-white/90 hover:text-white transition-colors"
               >
                 Мій профіль
               </Link>
@@ -83,18 +83,18 @@ export default function SearchPage() {
           <div className="lg:col-span-3">
             {loading ? (
               <div className="text-center py-12">
-                <p className="text-gray-600">Завантаження...</p>
+                <p className="text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">Завантаження...</p>
               </div>
             ) : profiles.length === 0 ? (
-              <div className="rounded-lg border border-gray-200 bg-white/95 backdrop-blur-sm p-12 text-center">
-                <p className="text-gray-600">Профілів не знайдено</p>
-                <p className="mt-2 text-sm text-gray-500">
+              <div className="rounded-3xl border border-white/30 bg-white/20 backdrop-blur-xl p-12 text-center shadow-2xl">
+                <p className="text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">Профілів не знайдено</p>
+                <p className="mt-2 text-sm text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
                   Спробуйте змінити фільтри пошуку
                 </p>
               </div>
             ) : (
               <div className="space-y-4">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <h2 className="text-2xl font-semibold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                   Знайдено профілів: {profiles.length}
                 </h2>
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">

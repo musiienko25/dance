@@ -32,16 +32,16 @@ export default function ProfileCard({ profile }: ProfileCardProps) {
   }
 
   return (
-    <div className="rounded-lg border border-gray-200 bg-white/95 backdrop-blur-sm p-6 shadow-sm transition-shadow hover:shadow-md">
+    <div className="rounded-3xl border border-white/30 bg-white/20 backdrop-blur-xl p-6 shadow-2xl transition-all hover:shadow-3xl hover:bg-white/25">
       <div className="flex items-start justify-between">
         <div className="flex-1">
-          <h3 className="text-xl font-semibold text-gray-900">
+          <h3 className="text-xl font-semibold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
             {profile.nickname || profile.name}
           </h3>
           {profile.nickname && (
-            <p className="text-sm text-gray-500">{profile.name}</p>
+            <p className="text-sm text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">{profile.name}</p>
           )}
-          <p className="mt-1 text-sm text-gray-600">
+          <p className="mt-1 text-sm text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
             {profile.city} • {getAgeCategory(profile.age)} років
           </p>
         </div>
@@ -49,34 +49,34 @@ export default function ProfileCard({ profile }: ProfileCardProps) {
 
       <div className="mt-4 space-y-2">
         <div>
-          <span className="text-sm font-medium text-gray-700">Стилі: </span>
-          <span className="text-sm text-gray-600">
+          <span className="text-sm font-medium text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">Стилі: </span>
+          <span className="text-sm text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
             {profile.dance_styles.map((style) => danceStyleLabels[style] || style).join(', ')}
           </span>
         </div>
         <div>
-          <span className="text-sm font-medium text-gray-700">Рівень: </span>
-          <span className="text-sm text-gray-600">
+          <span className="text-sm font-medium text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">Рівень: </span>
+          <span className="text-sm text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
             {skillLevelLabels[profile.skill_level] || profile.skill_level}
           </span>
         </div>
         <div>
-          <span className="text-sm font-medium text-gray-700">Цілі: </span>
-          <span className="text-sm text-gray-600">
+          <span className="text-sm font-medium text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">Цілі: </span>
+          <span className="text-sm text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
             {profile.goals.map((goal) => goalLabels[goal] || goal).join(', ')}
           </span>
         </div>
       </div>
 
       {profile.description && (
-        <p className="mt-4 text-sm text-gray-600 line-clamp-2">{profile.description}</p>
+        <p className="mt-4 text-sm text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)] line-clamp-2">{profile.description}</p>
       )}
 
       <div className="mt-6 flex gap-2">
         {profile.email && (
           <a
             href={`mailto:${profile.email}`}
-            className="flex-1 rounded-md bg-blue-600 px-4 py-2 text-center text-sm font-medium text-white hover:bg-blue-700 transition-colors"
+            className="flex-1 rounded-xl border border-white/30 bg-white/30 backdrop-blur-sm px-4 py-2 text-center text-sm font-semibold text-white hover:bg-white/40 transition-all duration-200 shadow-lg"
           >
             Написати
           </a>
@@ -86,7 +86,7 @@ export default function ProfileCard({ profile }: ProfileCardProps) {
             href={profile.social_media}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 rounded-md border border-gray-300 bg-white px-4 py-2 text-center text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+            className="flex-1 rounded-xl border border-white/30 bg-white/20 backdrop-blur-sm px-4 py-2 text-center text-sm font-semibold text-white hover:bg-white/30 transition-all duration-200 shadow-lg"
           >
             Соцмережа
           </a>
