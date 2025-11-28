@@ -60,7 +60,7 @@ export default function SearchPage() {
       <nav className="bg-white/20 backdrop-blur-xl border-b border-white/30 shadow-lg">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
-            <h1 className="text-xl font-bold text-white drop-shadow-lg">Dance Partners</h1>
+            <h1 className="text-xl font-bold text-white drop-shadow-lg font-display">Dance Partners</h1>
             <div className="flex gap-4">
               <Link
                 href="/profile"

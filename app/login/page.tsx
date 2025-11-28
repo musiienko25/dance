@@ -47,10 +47,10 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center px-4">
+    <div className="flex min-h-screen flex-col items-center justify-center px-4">
       <div className="w-full max-w-md space-y-8 rounded-3xl bg-white/20 backdrop-blur-xl p-8 shadow-2xl border border-white/30">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-white drop-shadow-lg">
+          <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-white drop-shadow-lg font-display">
             Вхід до системи
           </h2>
           <p className="mt-2 text-center text-sm text-white/90">
@@ -147,6 +147,9 @@ export default function LoginPage() {
           </div>
         </form>
       </div>
+      <p className="mt-6 text-center text-xl text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] font-medium font-display">
+        Знайди свого ідеального партнера по бальним танцям
+      </p>
     </div>
   )
 }

@@ -35,7 +35,7 @@ export default function ProfileCard({ profile }: ProfileCardProps) {
     <div className="rounded-3xl border border-white/30 bg-white/20 backdrop-blur-xl p-6 shadow-2xl transition-all hover:shadow-3xl hover:bg-white/25">
       <div className="flex items-start justify-between">
         <div className="flex-1">
-          <h3 className="text-xl font-semibold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+          <h3 className="text-xl font-semibold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] font-display">
             {profile.nickname || profile.name}
           </h3>
           {profile.nickname && (
